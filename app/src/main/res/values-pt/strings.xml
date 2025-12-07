@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FlexEconomy</string>
+    <string name="consumption_1">Consumo 1</string>
+    <string name="price_1">Preço 1</string>
+    <string name="search_fuel">Buscar</string>
+    <string name="consumption_2">Consumo 2</string>
+    <string name="price_2">Preço 2</string>
+    <string name="calculate">Calcular</string>
+    <string name="fuel_one">A opção mais barata é o Combustível 1</string>
+    <string name="fuel_two">A opção mais barata é o Combustível 2</string>
+    <string name="fuel_three">Ambos os combustíveis possuem o mesmo custo-benefício</string>
+</resources>

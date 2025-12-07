@@ -6,4 +6,7 @@
     <string name="consumption_2">Consumption 2</string>
     <string name="price_2">Price 2</string>
     <string name="calculate">Calculate</string>
+    <string name="fuel_one">The cheapest option is Fuel 1</string>
+    <string name="fuel_two">The cheapest option is Fuel 2</string>
+    <string name="fuel_three">Both fuels have the same cost-benefit</string>
 </resources>

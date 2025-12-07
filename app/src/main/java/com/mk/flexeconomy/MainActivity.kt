@@ -1,7 +1,9 @@
 package com.mk.flexeconomy
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -10,7 +12,11 @@ import java.text.NumberFormat
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
+
+    private var lastClicked = 0
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +30,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        binding.btCalculate.setOnClickListener {
-            calculate()
-        }
-
         if (savedInstanceState != null){
 
             binding.etConsumeFuelOne.setText(savedInstanceState.getString("et_consume_fuel_one"))
@@ -38,6 +40,39 @@ class MainActivity : AppCompatActivity() {
 
             binding.tvResult.text = savedInstanceState.getString("tv_result")
 
+        }
+
+        binding.btCalculate.setOnClickListener {
+            calculate()
+        }
+
+        binding.btConsumeFuelOne.setOnClickListener {
+            lastClicked = 1
+            getResult.launch(Intent(this, FuelActivity::class.java))
+        }
+
+        binding.btConsumeFuelTwo.setOnClickListener {
+            lastClicked = 2
+            getResult.launch(Intent(this, FuelActivity::class.java))
+        }
+
+    }
+
+    private val getResult = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult() ){ it ->
+
+        if (it.resultCode == RESULT_OK){
+            val data = it.data
+            val price = data?.getStringExtra("price").toString()
+            val fuel = data?.getStringExtra("fuel").toString()
+
+            if (lastClicked == 1) {
+                binding.tlPriceFuelOne.hint = fuel
+                binding.etPriceFuelOne.setText(price)
+            } else if (lastClicked == 2) {
+                binding.tlPriceFuelTwo.hint = fuel
+                binding.etPriceFuelTwo.setText(price)
+            }
         }
     }
 
@@ -53,11 +88,11 @@ class MainActivity : AppCompatActivity() {
         val costPerKmTwo = etPriceFuelTwo / etConsumeFuelTwo
 
         val result = if (costPerKmOne < costPerKmTwo) {
-            "The cheapest option is Fuel 1"
+            getString(R.string.fuel_one)
         } else if (costPerKmTwo < costPerKmOne) {
-            "The cheapest option is Fuel 2"
+            getString(R.string.fuel_two)
         } else {
-            "Both fuels have the same cost-benefit"
+            getString(R.string.fuel_three)
         }
 
         binding.tvResult.text = result
