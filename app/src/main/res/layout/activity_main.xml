@@ -1,121 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tl_consume_fuel_one"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="@string/consumption_1"
-        app:layout_constraintEnd_toStartOf="@+id/bt_consume_fuel_one"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_consume_fuel_one"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_consume_fuel_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/consumption_1"
+            app:layout_constraintEnd_toStartOf="@+id/bt_consume_fuel_one"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tl_price_fuel_one"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/price_1"
-        app:layout_constraintEnd_toEndOf="@+id/tl_consume_fuel_one"
-        app:layout_constraintStart_toStartOf="@+id/tl_consume_fuel_one"
-        app:layout_constraintTop_toBottomOf="@+id/tl_consume_fuel_one">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_consume_fuel_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_price_fuel_one"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_price_fuel_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/price_1"
+            app:layout_constraintEnd_toEndOf="@+id/tl_consume_fuel_one"
+            app:layout_constraintStart_toStartOf="@+id/tl_consume_fuel_one"
+            app:layout_constraintTop_toBottomOf="@+id/tl_consume_fuel_one">
 
-    <Button
-        android:id="@+id/bt_consume_fuel_one"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/search_fuel"
-        app:layout_constraintBottom_toBottomOf="@+id/tl_price_fuel_one"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tl_consume_fuel_one" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_price_fuel_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tl_consume_fuel_two"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:hint="@string/consumption_2"
-        app:layout_constraintEnd_toEndOf="@+id/tl_price_fuel_one"
-        app:layout_constraintStart_toStartOf="@+id/tl_price_fuel_one"
-        app:layout_constraintTop_toBottomOf="@+id/tl_price_fuel_one">
+        <Button
+            android:id="@+id/bt_consume_fuel_one"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/search_fuel"
+            app:layout_constraintBottom_toBottomOf="@+id/tl_price_fuel_one"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tl_consume_fuel_one" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_consume_fuel_two"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_consume_fuel_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="@string/consumption_2"
+            app:layout_constraintEnd_toEndOf="@+id/tl_price_fuel_one"
+            app:layout_constraintStart_toStartOf="@+id/tl_price_fuel_one"
+            app:layout_constraintTop_toBottomOf="@+id/tl_price_fuel_one">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tl_price_fuel_two"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/price_2"
-        app:layout_constraintEnd_toEndOf="@+id/tl_consume_fuel_two"
-        app:layout_constraintStart_toStartOf="@+id/tl_consume_fuel_two"
-        app:layout_constraintTop_toBottomOf="@+id/tl_consume_fuel_two">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_consume_fuel_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_price_fuel_two"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_price_fuel_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/price_2"
+            app:layout_constraintEnd_toEndOf="@+id/tl_consume_fuel_two"
+            app:layout_constraintStart_toStartOf="@+id/tl_consume_fuel_two"
+            app:layout_constraintTop_toBottomOf="@+id/tl_consume_fuel_two">
 
-    <Button
-        android:id="@+id/bt_consume_fuel_two"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:text="@string/search_fuel"
-        app:layout_constraintBottom_toBottomOf="@+id/tl_price_fuel_two"
-        app:layout_constraintEnd_toEndOf="@+id/bt_consume_fuel_one"
-        app:layout_constraintTop_toTopOf="@+id/tl_consume_fuel_two" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_price_fuel_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/bt_calculate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/calculate"
-        app:layout_constraintEnd_toEndOf="@+id/bt_consume_fuel_two"
-        app:layout_constraintStart_toStartOf="@+id/tl_price_fuel_two"
-        app:layout_constraintTop_toBottomOf="@+id/tl_price_fuel_two" />
+        <Button
+            android:id="@+id/bt_consume_fuel_two"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:text="@string/search_fuel"
+            app:layout_constraintBottom_toBottomOf="@+id/tl_price_fuel_two"
+            app:layout_constraintEnd_toEndOf="@+id/bt_consume_fuel_one"
+            app:layout_constraintTop_toTopOf="@+id/tl_consume_fuel_two" />
 
-    <TextView
-        android:id="@+id/tv_result"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center_horizontal"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/bt_calculate"
-        app:layout_constraintStart_toStartOf="@+id/bt_calculate"
-        app:layout_constraintTop_toBottomOf="@+id/bt_calculate"
-        tools:text="The cheapest option is " />
+        <Button
+            android:id="@+id/bt_calculate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/calculate"
+            app:layout_constraintEnd_toEndOf="@+id/bt_consume_fuel_two"
+            app:layout_constraintStart_toStartOf="@+id/tl_price_fuel_two"
+            app:layout_constraintTop_toBottomOf="@+id/tl_price_fuel_two" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/bt_calculate"
+            app:layout_constraintStart_toStartOf="@+id/bt_calculate"
+            app:layout_constraintTop_toBottomOf="@+id/bt_calculate"
+            tools:text="The cheapest option is " />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
